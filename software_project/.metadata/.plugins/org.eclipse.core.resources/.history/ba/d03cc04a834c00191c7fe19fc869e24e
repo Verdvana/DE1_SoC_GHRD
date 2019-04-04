@@ -1,0 +1,35 @@
+/*
+ * main.c
+ *
+ *  Created on: 2019年3月5日
+ *      Author: Verdvana
+ */
+
+
+//gcc标准头文件
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+
+//hps 厂家提供的底层定义头文件
+#define soc_cv_av	//定义使用soc_cv_av硬件平台
+
+#include "hwlib.h"
+#include "socal/socal.h"
+#include "socal/hps.h"
+
+//与用户具体HPS应用系统相关的硬件描述头文件
+#include "hps_0.h"
+
+#define HW_REGS_BASE (ALT_STM_OFST )	//HPS外设地址段基地址
+#define HW_REGS_SPAN (0x04000000 )		//HPS外设地址段地址空间
+#define HW_REGS_MASK (HW_REGS_SPAN - 1 )	//HPS外设地址段地址掩码
+
+int main (int argc,char *argv[])  //变量数量 变量内容
+{
+	printf("Hello World\n");
+	printf("Verdvana\n");
+	return 0;
+}
+

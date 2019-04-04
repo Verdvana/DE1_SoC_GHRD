@@ -27,6 +27,11 @@
    }
    element alt_vip_vfr_0.avalon_slave
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
@@ -43,6 +48,11 @@
    }
    element button_pio.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "192";
@@ -75,13 +85,18 @@
    }
    element hps_0.f2h_axi_slave
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "0";
          type = "String";
       }
    }
-   element iic_0
+   element i2c_0
    {
       datum _sortIndex
       {
@@ -89,11 +104,11 @@
          type = "int";
       }
    }
-   element iic_0.av
+   element i2c_0.av
    {
       datum baseAddress
       {
-         value = "128";
+         value = "288";
          type = "String";
       }
    }
@@ -107,6 +122,11 @@
    }
    element led_pio.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "208";
@@ -123,6 +143,11 @@
    }
    element spi_0.spi_control_port
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "128";
@@ -139,6 +164,11 @@
    }
    element sysid_qsys.control_slave
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "224";
@@ -155,9 +185,30 @@
    }
    element uart_0.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "160";
+         type = "String";
+      }
+   }
+   element uart_1
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element uart_1.s1
+   {
+      datum baseAddress
+      {
+         value = "256";
          type = "String";
       }
    }
@@ -207,7 +258,7 @@
    type="reset"
    dir="start" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
- <interface name="iic_0" internal="iic_0.wire" />
+ <interface name="i2c_0" internal="i2c_0.wire" type="conduit" dir="end" />
  <interface
    name="led_pio"
    internal="led_pio.external_connection"
@@ -219,6 +270,11 @@
  <interface
    name="uart_0"
    internal="uart_0.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="uart_1"
+   internal="uart_1.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -832,7 +888,7 @@
   <parameter name="usb_mp_clk_div" value="0" />
   <parameter name="use_default_mpu_clk" value="false" />
  </module>
- <module name="iic_0" kind="iic" version="1.0" enabled="0" />
+ <module name="i2c_0" kind="iic" version="1.0" enabled="1" />
  <module name="led_pio" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -886,6 +942,22 @@
   <parameter name="useEopRegister" value="false" />
   <parameter name="useRelativePathForSimFile" value="false" />
  </module>
+ <module name="uart_1" kind="altera_avalon_uart" version="18.1" enabled="1">
+  <parameter name="baud" value="115200" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="simCharStream" value="" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="useEopRegister" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+ </module>
  <connection
    kind="avalon"
    version="18.1"
@@ -899,9 +971,9 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="iic_0.av">
+   end="i2c_0.av">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x0120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -953,6 +1025,15 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_lw_axi_master"
+   end="uart_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0100" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
    end="spi_0.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0080" />
@@ -968,12 +1049,13 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="button_pio.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="uart_0.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="spi_0.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="uart_1.clk" />
  <connection
    kind="clock"
    version="18.1"
    start="clk_0.clk"
    end="alt_vip_vfr_0.clock_master" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="iic_0.clock_sink" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="i2c_0.clock_sink" />
  <connection
    kind="clock"
    version="18.1"
@@ -1003,7 +1085,7 @@
    kind="interrupt"
    version="18.1"
    start="hps_0.f2h_irq0"
-   end="iic_0.interrupt_sender">
+   end="i2c_0.interrupt_sender">
   <parameter name="irqNumber" value="3" />
  </connection>
  <connection
@@ -1026,6 +1108,13 @@
    start="hps_0.f2h_irq0"
    end="spi_0.irq">
   <parameter name="irqNumber" value="2" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="hps_0.f2h_irq0"
+   end="uart_1.irq">
+  <parameter name="irqNumber" value="4" />
  </connection>
  <connection
    kind="reset"
@@ -1067,7 +1156,12 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="iic_0.reset_sink" />
+   end="uart_1.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="i2c_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

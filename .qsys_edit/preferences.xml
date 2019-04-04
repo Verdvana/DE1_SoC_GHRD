@@ -7,8 +7,7 @@
    <irq preferredWidth="47" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/DSP/Video and Image Processing,Project,Library,Library/DSP" />
- <window width="2560" height="1400" x="0" y="0" />
+ <library expandedCategories="Project,Library" />
+ <window width="1616" height="876" x="2552" y="224" />
  <hdlexample language="VERILOG" />
 </preferences>

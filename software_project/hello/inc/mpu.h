@@ -1,0 +1,21 @@
+/*
+ * mpu.h
+ *
+ *  Created on: 2019年3月26日
+ *      Author: Verdvana
+ */
+
+#ifndef MPU_H_
+#define MPU_H_
+
+#include <string.h>
+
+#define HW_REGS_BASE (ALT_STM_OFST )	//HPS外设地址段基地址  0xfc000000
+#define HW_REGS_SPAN (0x04000000 )		//HPS外设地址段地址空间
+#define HW_REGS_MASK (HW_REGS_SPAN - 1 )	//HPS外设地址段地址掩码
+
+
+
+int fpga_init(long int *virtual_base);
+
+#endif /* MPU_H_ */

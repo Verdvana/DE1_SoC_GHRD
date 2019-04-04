@@ -1,0 +1,22 @@
+/*
+ * button.c
+ *
+ *  Created on: 2019Äê3ÔÂ26ÈÕ
+ *      Author: Verdvana
+ */
+
+
+#include <stddef.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+
+#include "../inc/button.h"
+
+extern volatile unsigned long *button_pio_virtual_base ;
+
+unsigned int Button_Edge()
+{
+	unsigned int x;
+	x=*(button_pio_virtual_base + 3);
+	return x;
+}

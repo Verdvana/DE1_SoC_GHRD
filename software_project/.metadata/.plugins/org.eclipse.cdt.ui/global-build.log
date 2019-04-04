@@ -33,3 +33,1714 @@ arm-linux-gnueabihf-gcc -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" 
 arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
 'Finished building target: hello'
 ' '
+09:28:32 **** Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+17:07:11 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:18:19: fatal error: hwlib.h: No such file or directory
+ #include "hwlib.h"
+                   ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+17:15:07 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:23:19: fatal error: hps_0.h: No such file or directory
+ #include "hps_0.h"
+                   ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+18:55:41 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:23:19: fatal error: hps_0.h: No such file or directory
+ #include "hps_0.h"
+                   ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+18:56:20 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+19:04:53 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+19:05:02 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:04:43 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:39:59 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:58:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:77:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:34:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:151:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:41:06 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:43:48 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:58:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:77:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:34:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:154:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:43:53 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:43:58 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+08:49:32 **** Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:65:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:120:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:34:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:131:2: warning: passing argument 1 of 'uart_scanf' from incompatible pointer type [enabled by default]
+  uart_scanf(&rx_buf); //接收一行数据到rx_buf中
+  ^
+../main.c:99:5: note: expected 'char *' but argument is of type 'char (*)[128]'
+ int uart_scanf(char *p) {
+     ^
+../main.c:135:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+08:49:45 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:09:24 **** Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:09:26 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:10:00 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:65:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:131:2: warning: passing argument 1 of 'uart_scanf' from incompatible pointer type [enabled by default]
+  uart_scanf(&rx_buf); //接收一行数据到rx_buf中
+  ^
+../main.c:99:5: note: expected 'char *' but argument is of type 'char (*)[128]'
+ int uart_scanf(char *p) {
+     ^
+../main.c:135:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+../main.c:137:8: warning: 'fd' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   close(fd);
+        ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+20:10:09 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:11:48 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:65:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:131:2: warning: passing argument 1 of 'uart_scanf' from incompatible pointer type [enabled by default]
+  uart_scanf(&rx_buf); //接收一行数据到rx_buf中
+  ^
+../main.c:99:5: note: expected 'char *' but argument is of type 'char (*)[128]'
+ int uart_scanf(char *p) {
+     ^
+../main.c:135:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+../main.c:137:8: warning: 'fd' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   close(fd);
+        ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+20:11:55 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:14:12 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:65:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:120:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:34:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:131:2: warning: passing argument 1 of 'uart_scanf' from incompatible pointer type [enabled by default]
+  uart_scanf(&rx_buf); //接收一行数据到rx_buf中
+  ^
+../main.c:99:5: note: expected 'char *' but argument is of type 'char (*)[128]'
+ int uart_scanf(char *p) {
+     ^
+../main.c:135:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+20:14:13 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+20:56:13 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:145:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+20:56:15 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:08:24 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:144:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:08:26 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:09:54 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:144:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:09:55 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:30 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:144:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:10:37 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:12:12 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:144:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:12:18 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:16:47 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:144:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:16:49 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:30 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:35 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:19:14 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:148:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:19:15 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:23:45 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:150:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:23:47 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:29:50 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:60:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:73:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:33:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:154:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:13:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+21:29:52 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+18:44:17 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+18:55:44 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+18:57:18 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+19:00:12 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+19:44:35 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:59:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:72:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:32:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:152:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+19:51:47 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'fpga_init':
+../main.c:59:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+../main.c: In function 'main':
+../main.c:72:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+../main.c:32:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base) {
+     ^
+../main.c:153:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
+'Finished building target: hello'
+' '
+19:51:49 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+10:47:25 **** Clean-only build of configuration Debug for project hello ****
+make clean 
+clean   ./main.o   ./main.d  hello 
+' '
+10:47:25 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+../src/led.c:12:17: fatal error: led.h: No such file or directory
+ #include "led.h"
+                 ^
+compilation terminated.
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+10:49:05 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:10: error: unknown type name 'u_int8_t'
+ void LED(u_int8_t x);
+          ^
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:10: error: unknown type name 'u_int8_t'
+ void LED(u_int8_t x){
+          ^
+In file included from ../src/led.c:14:0:
+../src/../inc/mpu.h:18:32: warning: 'button_pio_virtual_base' defined but not used [-Wunused-variable]
+ static volatile unsigned long *button_pio_virtual_base = NULL; //button_pio虚拟地址
+                                ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+10:50:05 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:11:19: fatal error: types.h: No such file or directory
+ #include <types.h>
+                   ^
+compilation terminated.
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+10:51:05 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:10: error: unknown type name 'u_int8_t'
+ void LED(u_int8_t x);
+          ^
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:10: error: unknown type name 'u_int8_t'
+ void LED(u_int8_t x){
+          ^
+In file included from ../src/led.c:14:0:
+../src/../inc/mpu.h:18:32: warning: 'button_pio_virtual_base' defined but not used [-Wunused-variable]
+ static volatile unsigned long *button_pio_virtual_base = NULL; //button_pio虚拟地址
+                                ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+10:55:11 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../src/led.c:14:0:
+../src/../inc/mpu.h:18:32: warning: 'button_pio_virtual_base' defined but not used [-Wunused-variable]
+ static volatile unsigned long *button_pio_virtual_base = NULL; //button_pio虚拟地址
+                                ^
+'Finished building: ../src/led.c'
+' '
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c:15:19: fatal error: hps_0.h: No such file or directory
+ #include "hps_0.h"
+                   ^
+compilation terminated.
+make: *** [src/subdir.mk:23: src/mpu.o] Error 1
+10:57:10 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c:15:25: fatal error: hello/hps_0.h: No such file or directory
+ #include "hello/hps_0.h"
+                         ^
+compilation terminated.
+make: *** [src/subdir.mk:23: src/mpu.o] Error 1
+10:57:19 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c: In function 'fpga_init':
+../src/mpu.c:23:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("ERROR: could not open \"/dev/mem\"...\n");
+   ^
+../src/mpu.c:23:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+../src/mpu.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("ERROR: mmap() failed...\n");
+   ^
+../src/mpu.c:32:3: warning: implicit declaration of function 'close' [-Wimplicit-function-declaration]
+   close(fd);
+   ^
+../src/mpu.c:44:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+'Finished building: ../src/mpu.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:26:24: fatal error: ../inc/mpu.h: No such file or directory
+ #include "../inc/mpu.h"
+                        ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+10:57:58 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:26:24: fatal error: ../inc/mpu.h: No such file or directory
+ #include "../inc/mpu.h"
+                        ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+10:58:16 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:26:17: fatal error: mpu.h: No such file or directory
+ #include "mpu.h"
+                 ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+10:58:22 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:26:17: fatal error: mpu.h: No such file or directory
+ #include "mpu.h"
+                 ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+10:58:26 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c:26:24: fatal error: ../inc/mpu.h: No such file or directory
+ #include "../inc/mpu.h"
+                        ^
+compilation terminated.
+make: *** [subdir.mk:20: main.o] Error 1
+10:59:14 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../src/led.c:14:0:
+../src/../inc/mpu.h:18:32: warning: 'button_pio_virtual_base' defined but not used [-Wunused-variable]
+ static volatile unsigned long *button_pio_virtual_base = NULL; //button_pio虚拟地址
+                                ^
+'Finished building: ../src/led.c'
+' '
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c: In function 'fpga_init':
+../src/mpu.c:23:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("ERROR: could not open \"/dev/mem\"...\n");
+   ^
+../src/mpu.c:23:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+../src/mpu.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("ERROR: mmap() failed...\n");
+   ^
+../src/mpu.c:32:3: warning: implicit declaration of function 'close' [-Wimplicit-function-declaration]
+   close(fd);
+   ^
+../src/mpu.c:44:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+'Finished building: ../src/mpu.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:78:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:20:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:160:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:22:05 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+14:32:43 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:78:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:20:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:162:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:32:45 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+14:46:47 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c:29:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../main.c:30:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+../main.c: In function 'main':
+../main.c:80:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:20:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:164:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+make: *** [subdir.mk:20: main.o] Error 1
+14:47:40 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c: In function 'LED':
+../src/led.c:18:4: error: 'led_pio_virtual_base' undeclared (first use in this function)
+  *(led_pio_virtual_base + 0) = x; //
+    ^
+../src/led.c:18:4: note: each undeclared identifier is reported only once for each function it appears in
+../src/led.c: In function 'LED_OFF':
+../src/led.c:23:4: error: 'led_pio_virtual_base' undeclared (first use in this function)
+  *(led_pio_virtual_base + 0) = 0; //
+    ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:48:12 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../src/led.c:17:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:49:14 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../src/led.c:17:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:49:40 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../src/led.c:17:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:51:13 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../src/led.c:17:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:51:16 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:16:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *led_pio_virtual_base;
+ ^
+../src/led.c:17:1: error: multiple storage classes in declaration specifiers
+ extern static volatile unsigned long *button_pio_virtual_base ;
+ ^
+make: *** [src/subdir.mk:23: src/led.o] Error 1
+14:51:24 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+'Finished building: ../src/led.c'
+' '
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c: In function 'fpga_init':
+../src/mpu.c:26:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("ERROR: could not open \"/dev/mem\"...\n");
+   ^
+../src/mpu.c:26:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+../src/mpu.c:34:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("ERROR: mmap() failed...\n");
+   ^
+../src/mpu.c:35:3: warning: implicit declaration of function 'close' [-Wimplicit-function-declaration]
+   close(fd);
+   ^
+../src/mpu.c:47:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+'Finished building: ../src/mpu.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:80:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:164:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:53:06 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/mpu.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/mpu.d" -MT"src/mpu.o" -o "src/mpu.o" "../src/mpu.c"
+../src/mpu.c: In function 'fpga_init':
+../src/mpu.c:57:16: warning: assignment makes integer from pointer without a cast [enabled by default]
+  *virtual_base = periph_virtual_base; //将外设虚拟地址保存，用以释放时候使用
+                ^
+'Finished building: ../src/mpu.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:57:20 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:80:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:164:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:59:49 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:15:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:80:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:164:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+14:59:52 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:44:28 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+In file included from ../src/button.c:13:0:
+../src/../inc/button.h:13:1: warning: parameter names (without types) in function declaration [enabled by default]
+ unsigned int Button_Edge(viod);
+ ^
+'Finished building: ../src/button.c'
+' '
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+'Finished building: ../src/led.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../main.c:28:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/button.h:13:1: warning: parameter names (without types) in function declaration [enabled by default]
+ unsigned int Button_Edge(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:66:5: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+     LED(682); //置位led_pio输出 1010101010
+     ^
+../main.c:69:5: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+     LED(341); //清零led_pio输出 0101010101
+     ^
+../main.c:125:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+21:44:54 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:48:09 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../main.c:28:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/button.h:13:1: warning: parameter names (without types) in function declaration [enabled by default]
+ unsigned int Button_Edge(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:49:2: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  LED(585);
+  ^
+../main.c:66:5: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+     LED(682); //置位led_pio输出 1010101010
+     ^
+../main.c:69:5: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+     LED(341); //清零led_pio输出 0101010101
+     ^
+../main.c:125:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+21:48:11 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:51:05 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../main.c:28:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/button.h:13:1: warning: parameter names (without types) in function declaration [enabled by default]
+ unsigned int Button_Edge(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:49:2: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  LED(585);
+  ^
+../main.c:125:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+21:51:07 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:53:20 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:19:6: error: conflicting types for 'LED'
+ void LED(u_int16_t x){
+      ^
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:13:6: note: previous declaration of 'LED' was here
+ void LED(u_int8_t x);
+      ^
+make: *** [src/subdir.mk:26: src/led.o] Error 1
+21:53:22 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:19:6: error: conflicting types for 'LED'
+ void LED(u_int16_t x){
+      ^
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:13:6: note: previous declaration of 'LED' was here
+ void LED(u_int8_t x);
+      ^
+make: *** [src/subdir.mk:26: src/led.o] Error 1
+21:53:23 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../src/led.c:19:6: error: conflicting types for 'LED'
+ void LED(u_int16_t x){
+      ^
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:13:6: note: previous declaration of 'LED' was here
+ void LED(u_int8_t x);
+      ^
+make: *** [src/subdir.mk:26: src/led.o] Error 1
+21:53:45 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/led.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/led.d" -MT"src/led.o" -o "src/led.o" "../src/led.c"
+In file included from ../src/led.c:12:0:
+../src/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+'Finished building: ../src/led.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+In file included from ../main.c:28:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/button.h:13:1: warning: parameter names (without types) in function declaration [enabled by default]
+ unsigned int Button_Edge(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:125:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+21:53:57 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:53:58 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+21:56:38 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+'Finished building: ../src/button.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:59:3: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [enabled by default]
+   printf(button_edge,"%d\n");
+   ^
+In file included from ../main.c:9:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\stdio.h:362:12: note: expected 'const char * __restrict__' but argument is of type 'unsigned int'
+ extern int printf (const char *__restrict __format, ...);
+            ^
+../main.c:127:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+21:59:54 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:44:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:127:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+22:02:26 **** Incremental Build of configuration Debug for project hello ****
+make all 
+make: Nothing to be done for 'all'.
+22:03:13 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+'Finished building: ../src/button.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:46:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:129:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+08:47:19 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:46:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:130:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+08:54:03 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+'Finished building: ../src/button.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:46:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:129:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+'Finished building target: hello'
+' '
+09:36:10 **** Incremental Build of configuration Debug for project hello ****
+make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+'Finished building: ../src/button.c'
+' '
+'Building file: ../main.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:46:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:61:3: warning: implicit declaration of function 'mdelay' [-Wimplicit-function-declaration]
+   mdelay();
+   ^
+../main.c:131:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
+'Finished building: ../main.c'
+' '
+'Building target: hello'
+'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+./main.o: In function `main':
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\Debug/../main.c:61: undefined reference to `mdelay'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:32: hello] Error 1

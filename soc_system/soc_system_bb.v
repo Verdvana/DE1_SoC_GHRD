@@ -60,6 +60,8 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO54,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO61,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO62,
+	i2c_0_scl,
+	i2c_0_sda,
 	led_pio_export,
 	memory_mem_a,
 	memory_mem_ba,
@@ -84,6 +86,8 @@ module soc_system (
 	spi_0_SS_n,
 	uart_0_rxd,
 	uart_0_txd,
+	uart_1_rxd,
+	uart_1_txd,
 	video_tft_vid_clk,
 	video_tft_vid_data,
 	video_tft_underflow,
@@ -154,6 +158,8 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO54;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO61;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO62;
+	inout		i2c_0_scl;
+	inout		i2c_0_sda;
 	output	[9:0]	led_pio_export;
 	output	[14:0]	memory_mem_a;
 	output	[2:0]	memory_mem_ba;
@@ -178,6 +184,8 @@ module soc_system (
 	output		spi_0_SS_n;
 	input		uart_0_rxd;
 	output		uart_0_txd;
+	input		uart_1_rxd;
+	output		uart_1_txd;
 	input		video_tft_vid_clk;
 	output	[31:0]	video_tft_vid_data;
 	output		video_tft_underflow;

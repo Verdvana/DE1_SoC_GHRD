@@ -1,0 +1,144 @@
+/*
+ * main.c
+ *
+ *  Created on: 2019年3月5日
+ *      Author: Verdvana
+ */
+
+
+//gcc标准头文件
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <string.h>
+
+//hps 厂家提供的底层定义头文件
+#define soc_cv_av	//定义使用soc_cv_av硬件平台
+
+#include "hwlib.h"			//常量定义
+#include "socal/socal.h"	//底层操作函数，如位、字节、半字、字的读写
+#include "socal/hps.h"		//外设地址信息定义
+
+//与用户具体HPS应用系统相关的硬件描述头文件
+#include "hps_0.h"
+
+#define HW_REGS_BASE (ALT_STM_OFST )	//HPS外设地址段基地址
+#define HW_REGS_SPAN (0x04000000 )		//HPS外设地址段地址空间
+#define HW_REGS_MASK (HW_REGS_SPAN - 1 )	//HPS外设地址段地址掩码
+
+static volatile unsigned long *led_pio_virtual_base = NULL;	//led_pio虚拟地址
+static volatile unsigned long *button_pio_virtual_base = NULL;	//button_pio虚拟地址
+static volatile unsigned long *uart_0_virtual_base = NULL;	//uart_0虚拟地址
+
+int fpga_init(long int *virtual_base) {
+	int fd;
+	void *periph_virtual_base;	//外设空间虚拟地址
+
+	//打开MPU
+	if ((fd = open("/dev/mem", ( O_RDWR | O_SYNC))) == -1) {
+		printf("ERROR: could not open \"/dev/mem\"...\n");
+		return (1);
+	}
+
+	//将外设地址段映射到用户空间
+	periph_virtual_base = mmap( NULL, HW_REGS_SPAN, ( PROT_READ | PROT_WRITE),
+	MAP_SHARED, fd, HW_REGS_BASE);
+	if (periph_virtual_base == MAP_FAILED) {
+		printf("ERROR: mmap() failed...\n");
+		close(fd);
+		return (1);
+	}
+
+	//映射得到led_pio外设虚拟地址
+	led_pio_virtual_base = periph_virtual_base
+			+ ((unsigned long) ( ALT_LWFPGASLVS_OFST + LED_PIO_BASE)
+					& (unsigned long) ( HW_REGS_MASK));
+	//映射得到button_pio外设虚拟地址
+	button_pio_virtual_base = periph_virtual_base
+			+ ((unsigned long) ( ALT_LWFPGASLVS_OFST + BUTTON_PIO_BASE)
+					& (unsigned long) ( HW_REGS_MASK));
+	//映射得到uart_0外设虚拟地址
+	uart_0_virtual_base = periph_virtual_base
+			+ ((unsigned long) ( ALT_LWFPGASLVS_OFST + UART_0_BASE)
+					& (unsigned long) ( HW_REGS_MASK));
+	*virtual_base = periph_virtual_base;	//将外设虚拟地址保存，用以释放时候使用
+	return fd;
+}
+
+//串口字符发送函数
+void uart_putc(char c) {
+	unsigned short uart_status;	//状态寄存器值
+	do {
+		uart_status = *(uart_0_virtual_base + 2);	//读取状态寄存器
+	} while (!(uart_status & 0x40));	//等待状态寄存器bit6（trdy）为1
+
+	*(uart_0_virtual_base + 1) = c;	//发送一个字符
+}
+
+//串口字符串发送函数
+void uart_printf(char *str) {
+	while (*str != '\0')	//检测当前指针指向的数是否为空字符
+	{
+		uart_putc(*str);	//发送一个字符
+		str++;	//字符串指针+1
+	}
+}
+
+//串口字符接收函数
+int uart_getc(void) {
+	unsigned short uart_status;	//状态寄存器值
+	do {
+		uart_status = *(uart_0_virtual_base + 2);	//读取状态寄存器
+	} while (!(uart_status & 0x80));	//等待状态寄存器bit7（rrdy）为1
+
+	return *(uart_0_virtual_base + 0);	//读取一个字符并作为函数返回值返回
+}
+
+//串口字符串接收函数
+int uart_scanf(char *p) {
+	int cnt = 0;	//接收个数计数器
+	while (1) {
+		*p = uart_getc();	//读取一个字符的数据
+		cnt++;
+		if (*p == '\n')	//判断数据是否为换行
+			return cnt;	//换行则停止计数,返回当前接收的字符个数
+		else
+			p++;	//接收指针增1
+	}
+}
+
+int main(int argc, char ** argv) {
+
+	int fd;
+	int virtual_base = 0;	//虚拟基地址
+
+	printf("Hello World\n");
+	printf("Verdvana\n");
+
+	//完成fpga侧外设虚拟地址映射
+	//fd = fpga_init(&virtual_base);
+
+	//设置uart_0的波特率为9600bps
+	*(uart_0_virtual_base + 4) = (int) (UART_0_FREQ / 9600 + 0.5);
+
+	uart_printf("Hello World!\n");	//打印hello world!字符串
+	uart_printf("Hello SoC FPGA!\n");	//打印Hello SoC FPGA!字符串
+	uart_printf("www.corecourse.cn\n");	//打印www.corecourse.cn字符串
+
+	char rx_buf[128] = { 0 };	//定义一个128字节的接收数组
+	memset(rx_buf, 0, 128);	//清除数组中内容
+	uart_scanf(&rx_buf);	//接收一行数据到rx_buf中
+	printf(rx_buf);	//打印当前接收到的字符串内容
+
+	//程序退出前，取消虚拟地址映射
+	if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+		printf("ERROR: munmap() failed...\n");
+		close(fd);
+		return (1);
+	}
+
+	close(fd); //关闭MPU
+	return 0;
+}
+

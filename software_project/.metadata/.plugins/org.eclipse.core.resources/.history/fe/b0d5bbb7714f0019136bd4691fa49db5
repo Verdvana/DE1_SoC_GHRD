@@ -1,0 +1,24 @@
+/*
+ * led.c
+ *
+ *  Created on: 2019Äê3ÔÂ26ÈÕ
+ *      Author: Verdvana
+ */
+
+#include <stddef.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+
+#include "led.h"
+
+#include "../inc/mpu.h"
+
+void LED(u_int8_t x){
+
+	*(led_pio_virtual_base + 0) = x; //
+}
+
+void LED_OFF(viod){
+
+	*(led_pio_virtual_base + 0) = 0; //
+}

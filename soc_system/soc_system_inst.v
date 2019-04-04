@@ -59,6 +59,8 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO54  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO54>),  //                .hps_io_gpio_inst_GPIO54
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO61  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO61>),  //                .hps_io_gpio_inst_GPIO61
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO62  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO62>),  //                .hps_io_gpio_inst_GPIO62
+		.i2c_0_scl                             (<connected-to-i2c_0_scl>),                             //           i2c_0.scl
+		.i2c_0_sda                             (<connected-to-i2c_0_sda>),                             //                .sda
 		.led_pio_export                        (<connected-to-led_pio_export>),                        //         led_pio.export
 		.memory_mem_a                          (<connected-to-memory_mem_a>),                          //          memory.mem_a
 		.memory_mem_ba                         (<connected-to-memory_mem_ba>),                         //                .mem_ba
@@ -83,6 +85,8 @@
 		.spi_0_SS_n                            (<connected-to-spi_0_SS_n>),                            //                .SS_n
 		.uart_0_rxd                            (<connected-to-uart_0_rxd>),                            //          uart_0.rxd
 		.uart_0_txd                            (<connected-to-uart_0_txd>),                            //                .txd
+		.uart_1_rxd                            (<connected-to-uart_1_rxd>),                            //          uart_1.rxd
+		.uart_1_txd                            (<connected-to-uart_1_txd>),                            //                .txd
 		.video_tft_vid_clk                     (<connected-to-video_tft_vid_clk>),                     //       video_tft.vid_clk
 		.video_tft_vid_data                    (<connected-to-video_tft_vid_data>),                    //                .vid_data
 		.video_tft_underflow                   (<connected-to-video_tft_underflow>),                   //                .underflow

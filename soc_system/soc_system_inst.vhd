@@ -60,6 +60,8 @@
 			hps_0_hps_io_hps_io_gpio_inst_GPIO54  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
 			hps_0_hps_io_hps_io_gpio_inst_GPIO61  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO61
 			hps_0_hps_io_hps_io_gpio_inst_GPIO62  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO62
+			i2c_0_scl                             : inout std_logic                     := 'X';             -- scl
+			i2c_0_sda                             : inout std_logic                     := 'X';             -- sda
 			led_pio_export                        : out   std_logic_vector(9 downto 0);                     -- export
 			memory_mem_a                          : out   std_logic_vector(14 downto 0);                    -- mem_a
 			memory_mem_ba                         : out   std_logic_vector(2 downto 0);                     -- mem_ba
@@ -84,6 +86,8 @@
 			spi_0_SS_n                            : out   std_logic;                                        -- SS_n
 			uart_0_rxd                            : in    std_logic                     := 'X';             -- rxd
 			uart_0_txd                            : out   std_logic;                                        -- txd
+			uart_1_rxd                            : in    std_logic                     := 'X';             -- rxd
+			uart_1_txd                            : out   std_logic;                                        -- txd
 			video_tft_vid_clk                     : in    std_logic                     := 'X';             -- vid_clk
 			video_tft_vid_data                    : out   std_logic_vector(31 downto 0);                    -- vid_data
 			video_tft_underflow                   : out   std_logic;                                        -- underflow
@@ -158,6 +162,8 @@
 			hps_0_hps_io_hps_io_gpio_inst_GPIO54  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO54,  --                .hps_io_gpio_inst_GPIO54
 			hps_0_hps_io_hps_io_gpio_inst_GPIO61  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO61,  --                .hps_io_gpio_inst_GPIO61
 			hps_0_hps_io_hps_io_gpio_inst_GPIO62  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO62,  --                .hps_io_gpio_inst_GPIO62
+			i2c_0_scl                             => CONNECTED_TO_i2c_0_scl,                             --           i2c_0.scl
+			i2c_0_sda                             => CONNECTED_TO_i2c_0_sda,                             --                .sda
 			led_pio_export                        => CONNECTED_TO_led_pio_export,                        --         led_pio.export
 			memory_mem_a                          => CONNECTED_TO_memory_mem_a,                          --          memory.mem_a
 			memory_mem_ba                         => CONNECTED_TO_memory_mem_ba,                         --                .mem_ba
@@ -182,6 +188,8 @@
 			spi_0_SS_n                            => CONNECTED_TO_spi_0_SS_n,                            --                .SS_n
 			uart_0_rxd                            => CONNECTED_TO_uart_0_rxd,                            --          uart_0.rxd
 			uart_0_txd                            => CONNECTED_TO_uart_0_txd,                            --                .txd
+			uart_1_rxd                            => CONNECTED_TO_uart_1_rxd,                            --          uart_1.rxd
+			uart_1_txd                            => CONNECTED_TO_uart_1_txd,                            --                .txd
 			video_tft_vid_clk                     => CONNECTED_TO_video_tft_vid_clk,                     --       video_tft.vid_clk
 			video_tft_vid_data                    => CONNECTED_TO_video_tft_vid_data,                    --                .vid_data
 			video_tft_underflow                   => CONNECTED_TO_video_tft_underflow,                   --                .underflow

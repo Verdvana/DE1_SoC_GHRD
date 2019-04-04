@@ -60,6 +60,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "fpga_uart_1_txd",
+					"strict" : false
+				},
+				{
 					"name" : "tft_rgb[0]",
 					"strict" : false
 				},
@@ -136,6 +140,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "fpga_i2c_0_sda",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_i2c_0_scl",
+					"strict" : false
+				},
+				{
 					"name" : "fpga_clk50m",
 					"strict" : false
 				},
@@ -153,6 +165,10 @@
 				},
 				{
 					"name" : "fpga_spi_0_MISO",
+					"strict" : false
+				},
+				{
+					"name" : "fpga_uart_1_rxd",
 					"strict" : false
 				}
 			]

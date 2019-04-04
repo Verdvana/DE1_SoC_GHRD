@@ -1,15 +1,44 @@
-08:30:27 **** Incremental Build of configuration Debug for project hello ****
+09:36:10 **** Incremental Build of configuration Debug for project hello ****
 make all 
+'Building file: ../src/button.c'
+'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"src/button.d" -MT"src/button.o" -o "src/button.o" "../src/button.c"
+'Finished building: ../src/button.c'
+' '
 'Building file: ../main.c'
 'Invoking: GCC C Compiler 4 [arm-linux-gnueabihf]'
-arm-linux-gnueabihf-gcc -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+arm-linux-gnueabihf-gcc -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include" -I"D:\intelFPGA\18.1\embedded\ip\altera\hps\altera_hps\hwlib\include\soc_cv_av" -I"E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc" -O0 -g -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:27:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/led.h:14:1: warning: parameter names (without types) in function declaration [enabled by default]
+ void LED_OFF(viod);
+ ^
+../main.c: In function 'main':
+../main.c:46:2: warning: passing argument 1 of 'fpga_init' from incompatible pointer type [enabled by default]
+  fd = fpga_init(&virtual_base);
+  ^
+In file included from ../main.c:26:0:
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\inc/../inc/mpu.h:19:5: note: expected 'long int *' but argument is of type 'int *'
+ int fpga_init(long int *virtual_base);
+     ^
+../main.c:61:3: warning: implicit declaration of function 'mdelay' [-Wimplicit-function-declaration]
+   mdelay();
+   ^
+../main.c:131:2: warning: passing argument 1 of 'munmap' makes pointer from integer without a cast [enabled by default]
+  if (munmap(virtual_base, HW_REGS_SPAN) != 0) {
+  ^
+In file included from ../main.c:12:0:
+d:\intelfpga\18.1\embedded\ds-5\sw\gcc\arm-linux-gnueabihf\libc\usr\include\sys\mman.h:76:12: note: expected 'void *' but argument is of type 'int'
+ extern int munmap (void *__addr, size_t __len) __THROW;
+            ^
 'Finished building: ../main.c'
 ' '
 'Building target: hello'
 'Invoking: GCC C Linker 4 [arm-linux-gnueabihf]'
-arm-linux-gnueabihf-gcc  -o "hello"  ./main.o   
-'Finished building target: hello'
-' '
+arm-linux-gnueabihf-gcc  -o "hello"  ./src/button.o ./src/led.o ./src/mpu.o  ./main.o   
+./main.o: In function `main':
+E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\software_project\hello\Debug/../main.c:61: undefined reference to `mdelay'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:32: hello] Error 1
 
-08:30:28 Build Finished (took 903ms)
+09:36:12 Build Finished (took 1s.107ms)
 

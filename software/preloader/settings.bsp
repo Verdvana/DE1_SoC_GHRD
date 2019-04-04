@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>spl</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2019-1-15 14:42:18</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1547534538881</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2019-4-3 12:41:46</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1554266506518</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>.\</BspGeneratedLocation>
         <BspSettingsFile>software\preloader\settings.bsp</BspSettingsFile>
         <HpsSettingsPath>..\..\hps_isw_handoff\soc_system_hps_0</HpsSettingsPath>
