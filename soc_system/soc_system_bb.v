@@ -53,6 +53,7 @@ module soc_system (
 	hps_0_hps_io_hps_io_gpio_inst_GPIO00,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO09,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO34,
+	hps_0_hps_io_hps_io_gpio_inst_GPIO35,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO37,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO44,
 	hps_0_hps_io_hps_io_gpio_inst_GPIO48,
@@ -151,6 +152,7 @@ module soc_system (
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO00;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO09;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO34;
+	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO35;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO37;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO44;
 	inout		hps_0_hps_io_hps_io_gpio_inst_GPIO48;

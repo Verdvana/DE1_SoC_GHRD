@@ -61,8 +61,8 @@ module DE1_SoC_GHRD(
 		
 		
 		inout  wire        hps_gpio_GPIO00,  //                .hps_io_gpio_inst_GPIO00
-
 		inout  wire        hps_gpio_GPIO37,  //                .hps_io_gpio_inst_GPIO37
+		inout  wire        hps_gpio_GPIO34,  //                .hps_io_gpio_inst_GPIO34
 		inout  wire        hps_gpio_GPIO44,  //                .hps_io_gpio_inst_GPIO44
 		inout  wire        hps_gpio_GPIO48,  //                .hps_io_gpio_inst_GPIO48
 		inout  wire        hps_gpio_GPIO61,  //                .hps_io_gpio_inst_GPIO61
@@ -208,9 +208,11 @@ module DE1_SoC_GHRD(
         .hps_0_hps_io_hps_io_i2c0_inst_SCL     (hps_i2c0_SCL),     //                .hps_io_i2c0_inst_SCL
         .hps_0_hps_io_hps_io_i2c1_inst_SDA     (hps_i2c1_SDA),     //                .hps_io_i2c1_inst_SDA
         .hps_0_hps_io_hps_io_i2c1_inst_SCL     (hps_i2c1_SCL),     //                .hps_io_i2c1_inst_SCL
+		  
         .hps_0_hps_io_hps_io_gpio_inst_GPIO00  (hps_gpio_GPIO00),  //                .hps_io_gpio_inst_GPIO00
         .hps_0_hps_io_hps_io_gpio_inst_GPIO09  (hps_usb1_CONV_N),  //                .hps_io_gpio_inst_GPIO09
-        .hps_0_hps_io_hps_io_gpio_inst_GPIO34  (hps_eth1_INT_N),  //                .hps_io_gpio_inst_GPIO34
+        .hps_0_hps_io_hps_io_gpio_inst_GPIO34  (hps_gpio_GPIO34),  //                .hps_io_gpio_inst_GPIO34
+		  .hps_0_hps_io_hps_io_gpio_inst_GPIO35  (hps_eth1_INT_N),  //                .hps_io_gpio_inst_GPIO34
         .hps_0_hps_io_hps_io_gpio_inst_GPIO37  (hps_gpio_GPIO37),  //                .hps_io_gpio_inst_GPIO37
         .hps_0_hps_io_hps_io_gpio_inst_GPIO44  (hps_gpio_GPIO44),  //                .hps_io_gpio_inst_GPIO44
         .hps_0_hps_io_hps_io_gpio_inst_GPIO48  (hps_gpio_GPIO48),  //                .hps_io_gpio_inst_GPIO48

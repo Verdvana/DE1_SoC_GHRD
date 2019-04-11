@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Apr 03 05:38:39 2019
+Analysis & Synthesis Status : Successful - Wed Apr 10 15:07:13 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : DE1_SoC_GHRD
 Top-level Entity Name : DE1_SoC_GHRD
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 4772
-Total pins : 171
+Total pins : 172
 Total virtual pins : 0
 Total block memory bits : 49,244
 Total DSP Blocks : 0

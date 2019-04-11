@@ -20,6 +20,7 @@
 #include "socal/socal.h"	//底层操作函数，如位、字节、半字、字的读写
 #include "socal/hps.h"		//外设地址信息定义
 
+
 //与用户具体HPS应用系统相关的硬件描述头文件
 #include "hps_0.h"
 
@@ -59,7 +60,7 @@ int main(int argc, char ** argv) {
 		//读取PIO边沿捕获寄存器以获知是否有检测到设定的边沿
 		Button_Edge();
 		alarm(2);
-		select();
+		sleep(2);
 
 		printf("button_edge=%u\n",button_edge);
 

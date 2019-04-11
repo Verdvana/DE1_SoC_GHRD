@@ -53,6 +53,7 @@
 			hps_0_hps_io_hps_io_gpio_inst_GPIO00  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO00
 			hps_0_hps_io_hps_io_gpio_inst_GPIO09  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO09
 			hps_0_hps_io_hps_io_gpio_inst_GPIO34  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO34
+			hps_0_hps_io_hps_io_gpio_inst_GPIO35  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO35
 			hps_0_hps_io_hps_io_gpio_inst_GPIO37  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO37
 			hps_0_hps_io_hps_io_gpio_inst_GPIO44  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO44
 			hps_0_hps_io_hps_io_gpio_inst_GPIO48  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO48
@@ -155,6 +156,7 @@
 			hps_0_hps_io_hps_io_gpio_inst_GPIO00  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO00,  --                .hps_io_gpio_inst_GPIO00
 			hps_0_hps_io_hps_io_gpio_inst_GPIO09  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO09,  --                .hps_io_gpio_inst_GPIO09
 			hps_0_hps_io_hps_io_gpio_inst_GPIO34  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO34,  --                .hps_io_gpio_inst_GPIO34
+			hps_0_hps_io_hps_io_gpio_inst_GPIO35  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO35,  --                .hps_io_gpio_inst_GPIO35
 			hps_0_hps_io_hps_io_gpio_inst_GPIO37  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO37,  --                .hps_io_gpio_inst_GPIO37
 			hps_0_hps_io_hps_io_gpio_inst_GPIO44  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO44,  --                .hps_io_gpio_inst_GPIO44
 			hps_0_hps_io_hps_io_gpio_inst_GPIO48  => CONNECTED_TO_hps_0_hps_io_hps_io_gpio_inst_GPIO48,  --                .hps_io_gpio_inst_GPIO48

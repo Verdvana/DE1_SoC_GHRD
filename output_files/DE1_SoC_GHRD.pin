@@ -452,7 +452,7 @@ hps_usb1_STP                 : C15       : output : 3.3-V LVTTL       :         
 GND                          : C16       : gnd    :                   :         :           :                
 hps_sdio_D1                  : C17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C18       :        :                   :         : 7C        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C19       :        :                   :         : 7B        :                
+hps_eth1_INT_N               : C19       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C20       :        :                   :         : 7B        :                
 GND                          : C21       : gnd    :                   :         :           :                
 hps_spim0_MOSI               : C22       : output : 3.3-V LVTTL       :         : 7A        : Y              
@@ -482,7 +482,7 @@ hps_usb1_D6                  : D15       : bidir  : 3.3-V LVTTL       :         
 hps_usb1_D2                  : D16       : bidir  : 3.3-V LVTTL       :         : 7D        : Y              
 hps_sdio_D2                  : D17       : bidir  : 3.3-V LVTTL       :         : 7C        : Y              
 VCCIO7C_HPS                  : D18       : power  :                   : 3.3V    : 7C        :                
-hps_eth1_INT_N               : D19       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
+hps_gpio_GPIO34              : D19       : bidir  : 3.3-V LVTTL       :         : 7B        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 7B        :                
 hps_eth1_RXD3                : D21       : input  : 3.3-V LVTTL       :         : 7B        : Y              
 hps_spim1_MOSI               : D22       : output : 3.3-V LVTTL       :         : 7A        : Y              

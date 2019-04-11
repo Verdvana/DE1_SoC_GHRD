@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate E:\DE1-SoC\FPGA_HPS\SOC_IIC\soc_system.qsys --block-symbol-file --output-directory=E:\DE1-SoC\FPGA_HPS\SOC_IIC\soc_system --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading SOC_IIC/soc_system.qsys
+Info: qsys-generate E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\soc_system.qsys --block-symbol-file --output-directory=E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\soc_system --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading DE1_SoC_GHRD/soc_system.qsys
 Progress: Reading input file
 Progress: Adding alt_vip_itc_0 [alt_vip_itc 14.0]
 Progress: Parameterizing module alt_vip_itc_0
@@ -40,8 +40,8 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate E:\DE1-SoC\FPGA_HPS\SOC_IIC\soc_system.qsys --synthesis=VERILOG --output-directory=E:\DE1-SoC\FPGA_HPS\SOC_IIC\soc_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading SOC_IIC/soc_system.qsys
+Info: qsys-generate E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\soc_system.qsys --synthesis=VERILOG --output-directory=E:\DE1-SoC\FPGA_HPS\DE1_SoC_GHRD\soc_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading DE1_SoC_GHRD/soc_system.qsys
 Progress: Reading input file
 Progress: Adding alt_vip_itc_0 [alt_vip_itc 14.0]
 Progress: Parameterizing module alt_vip_itc_0
@@ -90,7 +90,7 @@ Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
 Info: alt_vip_itc_0: "soc_system" instantiated alt_vip_itc "alt_vip_itc_0"
 Info: alt_vip_vfr_0: "soc_system" instantiated alt_vip_vfr "alt_vip_vfr_0"
 Info: button_pio: Starting RTL generation for module 'soc_system_button_pio'
-Info: button_pio:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0043_button_pio_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0043_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: button_pio:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_button_pio --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0005_button_pio_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0005_button_pio_gen//soc_system_button_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: button_pio: Done RTL generation for module 'soc_system_button_pio'
 Info: button_pio: "soc_system" instantiated altera_avalon_pio "button_pio"
 Info: hps_0: "Running  for module: hps_0"
@@ -99,20 +99,20 @@ Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
 Info: i2c_0: "soc_system" instantiated iic "i2c_0"
 Info: led_pio: Starting RTL generation for module 'soc_system_led_pio'
-Info: led_pio:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0045_led_pio_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0045_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: led_pio:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_led_pio --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0007_led_pio_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0007_led_pio_gen//soc_system_led_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: led_pio: Done RTL generation for module 'soc_system_led_pio'
 Info: led_pio: "soc_system" instantiated altera_avalon_pio "led_pio"
 Info: spi_0: Starting RTL generation for module 'soc_system_spi_0'
-Info: spi_0:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=soc_system_spi_0 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0046_spi_0_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0046_spi_0_gen//soc_system_spi_0_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_0:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=soc_system_spi_0 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0008_spi_0_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0008_spi_0_gen//soc_system_spi_0_component_configuration.pl  --do_build_sim=0  ]
 Info: spi_0: Done RTL generation for module 'soc_system_spi_0'
 Info: spi_0: "soc_system" instantiated altera_avalon_spi "spi_0"
 Info: sysid_qsys: "soc_system" instantiated altera_avalon_sysid_qsys "sysid_qsys"
 Info: uart_0: Starting RTL generation for module 'soc_system_uart_0'
-Info: uart_0:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=soc_system_uart_0 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0048_uart_0_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0048_uart_0_gen//soc_system_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=soc_system_uart_0 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0010_uart_0_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0010_uart_0_gen//soc_system_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: uart_0: Done RTL generation for module 'soc_system_uart_0'
 Info: uart_0: "soc_system" instantiated altera_avalon_uart "uart_0"
 Info: uart_1: Starting RTL generation for module 'soc_system_uart_1'
-Info: uart_1:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=soc_system_uart_1 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0049_uart_1_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7989_2573817154919404734.dir/0049_uart_1_gen//soc_system_uart_1_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_1:   Generation command is [exec D:/intelfpga/18.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga/18.1/quartus/bin64/perl/lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin/europa -I D:/intelfpga/18.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga/18.1/quartus/sopc_builder/bin -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- D:/intelfpga/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=soc_system_uart_1 --dir=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0011_uart_1_gen/ --quartus_dir=D:/intelfpga/18.1/quartus --verilog --config=C:/Users/Verdvana/AppData/Local/Temp/alt7995_811853751758695501.dir/0011_uart_1_gen//soc_system_uart_1_component_configuration.pl  --do_build_sim=0  ]
 Info: uart_1: Done RTL generation for module 'soc_system_uart_1'
 Info: uart_1: "soc_system" instantiated altera_avalon_uart "uart_1"
 Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
@@ -136,36 +136,36 @@ Info: hps_0_f2h_axi_slave_agent: "mm_interconnect_0" instantiated altera_merlin_
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: alt_vip_vfr_0_avalon_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "alt_vip_vfr_0_avalon_master_limiter"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: hps_0_f2h_axi_slave_wr_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "hps_0_f2h_axi_slave_wr_burst_adapter"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: hps_0_f2h_axi_slave_wr_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "hps_0_f2h_axi_slave_wr_rsp_width_adapter"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: i2c_0_av_translator: "mm_interconnect_1" instantiated altera_merlin_slave_translator "i2c_0_av_translator"
 Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_1" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: i2c_0_av_agent: "mm_interconnect_1" instantiated altera_merlin_slave_agent "i2c_0_av_agent"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: i2c_0_av_agent_rsp_fifo: "mm_interconnect_1" instantiated altera_avalon_sc_fifo "i2c_0_av_agent_rsp_fifo"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: crosser: "mm_interconnect_1" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file E:/DE1-SoC/FPGA_HPS/SOC_IIC/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file E:/DE1-SoC/FPGA_HPS/DE1_SoC_GHRD/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

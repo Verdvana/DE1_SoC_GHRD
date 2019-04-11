@@ -1,13 +1,13 @@
-Fitter Status : Successful - Wed Apr 03 05:40:41 2019
+Fitter Status : Successful - Wed Apr 10 15:09:34 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : DE1_SoC_GHRD
 Top-level Entity Name : DE1_SoC_GHRD
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 2,730 / 32,070 ( 9 % )
-Total registers : 4954
-Total pins : 171 / 457 ( 37 % )
+Logic utilization (in ALMs) : 2,744 / 32,070 ( 9 % )
+Total registers : 4964
+Total pins : 172 / 457 ( 38 % )
 Total virtual pins : 0
 Total block memory bits : 49,244 / 4,065,280 ( 1 % )
 Total RAM Blocks : 10 / 397 ( 3 % )

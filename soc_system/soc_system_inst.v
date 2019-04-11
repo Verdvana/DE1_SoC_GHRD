@@ -52,6 +52,7 @@
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO00  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO00>),  //                .hps_io_gpio_inst_GPIO00
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO09  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO09>),  //                .hps_io_gpio_inst_GPIO09
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO34  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO34>),  //                .hps_io_gpio_inst_GPIO34
+		.hps_0_hps_io_hps_io_gpio_inst_GPIO35  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO35>),  //                .hps_io_gpio_inst_GPIO35
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO37  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO37>),  //                .hps_io_gpio_inst_GPIO37
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO44  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO44>),  //                .hps_io_gpio_inst_GPIO44
 		.hps_0_hps_io_hps_io_gpio_inst_GPIO48  (<connected-to-hps_0_hps_io_hps_io_gpio_inst_GPIO48>),  //                .hps_io_gpio_inst_GPIO48
